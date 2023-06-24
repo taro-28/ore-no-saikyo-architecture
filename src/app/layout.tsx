@@ -1,3 +1,5 @@
+import { Header } from "../components/Header";
+import { Sidebar } from "../components/Sidebar";
 import "./globals.css";
 import { Inter } from "next/font/google";
 
@@ -15,7 +17,11 @@ export default function RootLayout({
 }) {
     return (
         <html lang="ja">
-            <body className={inter.className}>{children}</body>
+            <body className="grid grid-cols-2">
+                <Header className="col-span-2" />
+                <Sidebar className="col-span-1" />
+                <main className="col-span-1">{children}</main>
+            </body>
         </html>
     );
 }
