@@ -1,7 +1,5 @@
-import { FC } from "react";
-
 type Props = JSX.IntrinsicElements["header"];
 
-export const Header: FC<Props> = (props) => (
+export const Header = (props: Props) => (
     <header {...props}>Taro Architecture</header>
 );
