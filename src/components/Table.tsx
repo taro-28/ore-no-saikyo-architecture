@@ -14,19 +14,23 @@ export const Table = <T extends Item>({
     items,
     ...props
 }: Props<T>) => (
-    <table {...props}>
-        <thead>
+    <table {...props} className="border-2 border-gray-100">
+        <thead className="border-collapse border-b-2 border-solid border-gray-100">
             <tr>
                 {Object.entries(header).map(([key, value]) => (
-                    <th key={key}>{value}</th>
+                    <th key={key} className="px-4 py-2">
+                        {value}
+                    </th>
                 ))}
             </tr>
         </thead>
         <tbody>
             {items.map((item, index) => (
-                <tr key={index}>
+                <tr key={index} className="hover:bg-gray-50">
                     {Object.keys(header).map((key) => (
-                        <td key={key}>{item[key]}</td>
+                        <td key={key} className="px-4 py-2">
+                            {item[key]}
+                        </td>
                     ))}
                 </tr>
             ))}
