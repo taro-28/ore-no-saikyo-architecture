@@ -3,6 +3,7 @@
   "plugins": ["unused-imports"],
   "rules": {
     "no-useless-rename": "error",
-    "unused-imports/no-unused-imports": "error"
+    "unused-imports/no-unused-imports": "error",
+    "no-unused-vars": "error"
   }
 }
