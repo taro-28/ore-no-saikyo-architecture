@@ -4,6 +4,7 @@
   "rules": {
     "no-useless-rename": "error",
     "unused-imports/no-unused-imports": "error",
-    "no-unused-vars": "error"
+    "no-unused-vars": "error",
+    "react/display-name": "off"
   }
 }
