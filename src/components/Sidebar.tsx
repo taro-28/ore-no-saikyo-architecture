@@ -1,18 +1,20 @@
 "use client";
+import { Icon } from "@iconify/react";
 import clsx from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ComponentPropsWithoutRef, memo } from "react";
 
 type Item = {
+    icon: string;
     label: string;
     pathname: string;
 };
 
 const items: Item[] = [
-    { label: "Home", pathname: "/" },
-    { label: "User", pathname: "/users" },
-    { label: "Todo", pathname: "/todo" },
+    { icon: "radix-icons:home", label: "Home", pathname: "/" },
+    { icon: "ri:todo-line", label: "Todo", pathname: "/todo" },
+    { icon: "ph:user", label: "User", pathname: "/users" },
 ];
 
 type Props = JSX.IntrinsicElements["aside"];
@@ -27,9 +29,10 @@ export const Sidebar = memo(({ className, ...props }: Props) => {
             {...props}
         >
             <nav className="flex flex-col">
-                {items.map(({ label, pathname }) => (
+                {items.map(({ icon, label, pathname }) => (
                     <SidebarItem
                         key={label}
+                        icon={icon}
                         label={label}
                         pathname={pathname}
                     />
@@ -43,20 +46,21 @@ type SidebarItemProps = Item &
     Omit<ComponentPropsWithoutRef<typeof Link>, "href">;
 
 const SidebarItem = memo(
-    ({ pathname, label, className, ...props }: SidebarItemProps) => {
+    ({ icon, pathname, label, className, ...props }: SidebarItemProps) => {
         const currentPathname = usePathname();
         return (
             <Link
                 key={label}
                 href={pathname}
                 className={clsx(
-                    "py-2 pl-4 pr-2 hover:bg-gray-50",
+                    "flex items-center space-x-2 py-2 pl-4 pr-2 hover:bg-gray-50",
                     currentPathname === pathname && "text-blue-500",
                     className
                 )}
                 {...props}
             >
-                {label}
+                <Icon icon={icon} className="text-xl" />
+                <span>{label}</span>
             </Link>
         );
     }
