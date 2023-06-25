@@ -15,8 +15,8 @@ export default function RootLayout({
     return (
         <html lang="ja">
             <body className="grid h-screen grid-cols-[min-content_1fr] grid-rows-[min-content_1fr]">
-                <Header className="col-span-2 h-10 border-b-2 border-solid border-gray-200" />
-                <Sidebar className="col-span-1 w-60 border-r-2 border-solid border-gray-200 " />
+                <Header className="col-span-2 flex h-16 items-center border-b-2 border-solid border-gray-200" />
+                <Sidebar className="col-span-1 w-48 border-r-2 border-solid border-gray-200 " />
                 <main className="col-span-1">{children}</main>
             </body>
         </html>
