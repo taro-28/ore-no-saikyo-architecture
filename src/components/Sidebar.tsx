@@ -12,6 +12,7 @@ type Item = {
 const items: Item[] = [
     { label: "Home", pathname: "/" },
     { label: "User", pathname: "/users" },
+    { label: "Todo", pathname: "/todo" },
 ];
 
 type Props = JSX.IntrinsicElements["aside"];
