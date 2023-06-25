@@ -17,7 +17,7 @@ export default function RootLayout({
             <body className="grid h-screen grid-cols-[min-content_1fr] grid-rows-[min-content_1fr]">
                 <Header className="col-span-2 flex h-16 items-center border-b-2 border-solid border-gray-200" />
                 <Sidebar className="col-span-1" />
-                <main className="col-span-1">{children}</main>
+                <main className="col-span-1 m-4">{children}</main>
             </body>
         </html>
     );

@@ -50,7 +50,7 @@ const SidebarItem = memo(
                 key={label}
                 href={pathname}
                 className={clsx(
-                    "p-2 hover:bg-gray-100",
+                    "py-2 pl-4 pr-2 hover:bg-gray-50",
                     currentPathname === pathname && "text-blue-500",
                     className
                 )}

@@ -2,8 +2,8 @@ import { Table } from "@/components/Table";
 
 export default function Users() {
     return (
-        <div>
-            <h1>Users</h1>
+        <div className="space-y-4">
+            <h1 className="text-xl">Users</h1>
             <Table
                 header={{
                     id: "ID",
