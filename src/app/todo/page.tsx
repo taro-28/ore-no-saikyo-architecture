@@ -1,12 +1,13 @@
 "use client";
 import { Table } from "@/components/Table";
 import { useTodo } from "./useTodo";
+import { PageTitle } from "@/components/PageTitle";
 
 export default function Todo() {
     const { todo } = useTodo();
     return (
         <div className="space-y-4">
-            <h1 className="text-xl">Todo</h1>
+            <PageTitle>Todo</PageTitle>
             <Table
                 header={{
                     title: "Title",

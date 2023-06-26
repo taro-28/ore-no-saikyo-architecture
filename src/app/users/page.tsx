@@ -1,9 +1,10 @@
+import { PageTitle } from "@/components/PageTitle";
 import { Table } from "@/components/Table";
 
 export default function Users() {
     return (
         <div className="space-y-4">
-            <h1 className="text-xl">Users</h1>
+            <PageTitle>Users</PageTitle>
             <Table
                 header={{
                     id: "ID",
